@@ -16,9 +16,16 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/guestbooks")
 public class GuestbookListServlet extends HttpServlet {
+    private final GuestbookDao guestbookDao = new GuestbookDao();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 코드를 작성하세요.
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+        List<Guestbook> list = guestbookDao.getGuestbooks();
+
+        request.setAttribute("list",list);
+        RequestDispatcher requestDispatcher = request
+            .getRequestDispatcher("/WEB-INF/guestbook/guestbooks.jsp");
+        requestDispatcher.forward(request, response);
     }
 
 }

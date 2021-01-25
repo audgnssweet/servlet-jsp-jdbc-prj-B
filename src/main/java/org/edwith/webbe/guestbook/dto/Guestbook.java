@@ -3,6 +3,7 @@ package org.edwith.webbe.guestbook.dto;
 import java.util.Date;
 
 public class Guestbook {
+
     private Long id;
     private String name;
     private String content;
@@ -56,10 +57,10 @@ public class Guestbook {
     @Override
     public String toString() {
         return "Guestbook{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", content='" + content + '\'' +
-                ", regdate=" + regdate +
-                '}';
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", content='" + content + '\'' +
+            ", regdate=" + regdate +
+            '}';
     }
 }
